@@ -2,6 +2,7 @@
 
 namespace StudentsDataAPI.Model
 {
+    // model of a API response
     public class APIResponse
     {
         public APIResponse()

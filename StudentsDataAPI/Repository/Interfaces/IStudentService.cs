@@ -3,6 +3,7 @@ using StudentsDataAPI.Model.Dto;
 
 namespace StudentsDataAPI.Repository.Interfaces
 {
+    //Interfaces for the various student service
     public interface IStudentService
     {
         Task<IEnumerable<Student>> GetAllStudents();

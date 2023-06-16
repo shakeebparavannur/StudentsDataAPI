@@ -8,7 +8,7 @@ namespace StudentsDataAPI.Model.Dto
         public string Name { get; set; }
         [Required(ErrorMessage ="Date of Birth is required")]
         public DateTime DOB { get; set; }
-        [Required(ErrorMessage ="Course is a required field")]
+        [Required(ErrorMessage ="")]
         public string Course { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

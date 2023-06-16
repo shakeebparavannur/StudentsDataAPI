@@ -113,17 +113,18 @@ namespace StudentsDataAPI.Repository.Services
             return stud;
         }
 
-        
+
 
         private int CalculateAge(DateTime dob)
         {
-            DateTime currentDate  = DateTime.Today;
+            DateTime currentDate = DateTime.Today;
             int age = currentDate.Year - dob.Year;
-            if (dob.Date > currentDate.AddYears(-age))
+            if (dob > currentDate.AddYears(-age))
             {
                 age--;
             }
             return age;
         }
+
     }
 }

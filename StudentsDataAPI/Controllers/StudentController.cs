@@ -20,7 +20,7 @@ namespace StudentsDataAPI.Controllers
             this.studentService = studentService;
             response = new();
         }
-
+        // Get all Student details
         [HttpGet("Stduents")]
         public async Task<IActionResult> GetStudents()
         {
@@ -49,7 +49,7 @@ namespace StudentsDataAPI.Controllers
 
 
         }
-
+        //Add new student
         [HttpPost("Addstudent")]
         public async Task<IActionResult> AddStudent(AddStudentDto student)
         {
@@ -76,7 +76,7 @@ namespace StudentsDataAPI.Controllers
                 return BadRequest(response);
             }
         }
-
+        // get student by id
         [HttpGet("{id}")]
         public async Task <IActionResult> GetStudentById(int id)
         {
@@ -105,7 +105,7 @@ namespace StudentsDataAPI.Controllers
                 return BadRequest(response);
             }
         }
-
+        //update students data
         [HttpPut("Update StudentData/{id}")]
         public async Task <IActionResult> UpdateStudent(int id,AddStudentDto student)
         {
@@ -134,6 +134,7 @@ namespace StudentsDataAPI.Controllers
                 return BadRequest(response);
             }
         }
+        // delete student
         [HttpDelete("delete/{id}")]
         public async Task <IActionResult> DeleteStudent(int id)
         {
@@ -161,6 +162,8 @@ namespace StudentsDataAPI.Controllers
                 return BadRequest(response);
             }
         }
+
+        //search students by name
         [HttpPost("searchByname")]
         public async Task<IActionResult> SearchByName([FromBody] string name)
         {
@@ -187,6 +190,7 @@ namespace StudentsDataAPI.Controllers
                 return BadRequest(response);
             }
         }
+        //seatch student by course
         [HttpPost("searchByCourse")]
         public async Task <IActionResult> SearchByCourse([FromBody] string course)
         {
@@ -213,6 +217,8 @@ namespace StudentsDataAPI.Controllers
                 return BadRequest(response);
             }
         }
+
+        // paginate data by setting page size and page number
         [HttpGet("paginated")]
         public async Task<ActionResult<IEnumerable<Student>>>GetStudentByPagination(int pagenumber=1,int pagesize = 5)
         {

@@ -11,7 +11,11 @@ namespace StudentsDataAPI.Repository.Services
     {
         private readonly StudentContext context;
         private readonly IMapper mapper;
-       
+
+        public StudentService()
+        {
+        }
+
         public StudentService(StudentContext context,IMapper mapper)
         {
             this.context = context;

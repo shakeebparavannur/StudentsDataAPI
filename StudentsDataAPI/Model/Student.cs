@@ -7,13 +7,13 @@ namespace StudentsDataAPI.Model
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Name is Required")]
         public string Name { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Age is required")]
         public int Age { get; set; }
-        [Required]
+        [Required(ErrorMessage ="DOB is required")]
         public DateTime DOB { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Course is required")]
         public string Course { get; set; }
 
     }
